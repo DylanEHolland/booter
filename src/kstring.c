@@ -74,6 +74,31 @@ void output_initialize(void)
 			terminal_buffer[index] = vga_entry(' ', terminal_color);
 		}
 	}
+}
 
-    terminal_writestring("Taken control of monitor");
+char * kstring_implode(char * str1, char * str2) {
+	int total = strlen(str1) + strlen(str2) + 1;
+	char buffer[total];
+	
+	size_t n = 0;
+	for(; n < strlen(str1); n++) {
+		if(str1[n] == '\0') {
+			break;
+		} else {
+			buffer[n] = str1[n];
+		}
+	}
+
+	for(size_t i = 0; i < strlen(str2); i++) {
+		n++;
+
+		if(str1[i] == '\0') {
+			break;
+		} else {
+			buffer[n] = str2[i];
+		}
+	}
+
+	buffer[n] = '\0';
+	return buffer;
 }

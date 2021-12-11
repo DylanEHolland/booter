@@ -23,8 +23,10 @@ enum vga_color {
 	VGA_COLOR_WHITE = 15,
 };
 
-// static inline uint8_t vga_entry_color(enum vga_color fg, enum vga_color bg);
-// static inline uint16_t vga_entry(unsigned char uc, uint8_t color);
+struct kstring {
+	char *buffer;
+	int length;
+};
 
 uint8_t vga_entry_color(enum vga_color fg, enum vga_color bg);
 uint16_t vga_entry(unsigned char uc, uint8_t color);
@@ -36,3 +38,5 @@ void terminal_putchar(char c);
 void terminal_putentryat(char c, uint8_t color, size_t x, size_t y) ;
 
 void output_initialize(void);
+
+char * kstring_implode(char * str1, char * str2);
