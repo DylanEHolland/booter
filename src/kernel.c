@@ -14,6 +14,7 @@ void kernel_main(void)
 	output_initialize();
 	terminal_writestring("Entered C from assembly...");
 
-	char * str = kstring_implode("this is", "soemthing");
+	char * str = kstring_implode("t", "a");
 	terminal_writestring(str);
+
 }

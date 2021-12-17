@@ -37,8 +37,14 @@ void terminal_putchar(char c)
  
 void terminal_write(const char* data, size_t size)
 {
-	for (size_t i = 0; i < size; i++)
+	for (size_t i = 0; i < size; i++) {
+		// terminal_putchar('X');
+		if(strlen(data)) {
+			terminal_write("test", 4);
+		}
+
 		terminal_putchar(data[i]);
+	}
 }
  
 uint8_t vga_entry_color(enum vga_color fg, enum vga_color bg) 
