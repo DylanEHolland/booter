@@ -15,4 +15,5 @@ void kernel_main(void)
 	terminal_writestring("Entered C from assembly...");
 
 	char * str = kstring_implode("this is", "soemthing");
+	terminal_writestring(str);
 }

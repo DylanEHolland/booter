@@ -1,0 +1,1 @@
+void log_int(int integer, char * offsetter);
